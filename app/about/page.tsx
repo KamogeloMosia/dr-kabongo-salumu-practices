@@ -53,7 +53,7 @@ export default function AboutPage() {
                 Dr. Salumu has served the Kempton Park community for over two decades. He believes in patient-centered, evidence-based care and treats every patient with respect and empathy.
               </p>
               <p className={`text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>
-                He also works in the Arwyp Medical Centre Casualty Unit, providing emergency care when needed.
+                He also works in emergency care services, providing urgent medical attention when needed.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -251,7 +251,7 @@ export default function AboutPage() {
             <div>
               <h3 className={`font-semibold mb-2 text-base ${getHeadingClass()}`}>Emergency</h3>
               <p className={`text-gray-400 mb-1 text-sm ${getBodyClass()}`}>For emergencies, call 112 or go to your nearest ER.</p>
-              <p className={`text-gray-400 text-sm ${getBodyClass()}`}>After-hours: 011-922-1000 (Arwyp Medical Centre)</p>
+              <p className={`text-gray-400 text-sm ${getBodyClass()}`}>After-hours: 011-922-1000</p>
             </div>
           </div>
           <div className={`border-t border-primary-foreground/20 mt-6 pt-6 text-center text-gray-400 text-xs ${getBodyClass()}`}>

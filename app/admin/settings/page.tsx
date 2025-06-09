@@ -59,7 +59,7 @@ export default function SettingsPage() {
       "Dr. Kabongo Salumu has been serving the Johannesburg and Kempton Park communities for over 20 years, bringing a wealth of knowledge and experience to general practice medicine.",
     address: "20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa",
     mainPhone: "+27 83 587 5879",
-    email: "info@arwyp.co.za",
+    email: "info@drkabongosalumu.co.za",
     emergencyPhone: "+27 11 922 1172",
     officeHours: {
       monday: "8:00 AM - 5:00 PM",

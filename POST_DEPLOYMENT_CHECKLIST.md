@@ -12,7 +12,7 @@
 ### ✅ Content Verification
 - [ ] Dr. Kabongo Salumu's information is accurate
 - [ ] Contact details are correct (011 970 1590)
-- [ ] Arwyp Medical Centre address is displayed
+- [ ] Practice address is displayed correctly
 - [ ] Services list is comprehensive
 - [ ] Emergency contact information is visible
 

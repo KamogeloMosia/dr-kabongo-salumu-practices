@@ -93,7 +93,7 @@ The website uses a professional black and white color scheme with:
 ## 📞 Contact Information
 
 **Dr. Kabongo Salumu**
-- **Primary Location**: Arwyp Medical Centre, 20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa
+- **Primary Location**: 20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa
 - **Phone**: 011 970 1590
 - **Emergency**: +27 11 922 1172
 - **Alternative Location**: 14 Central Avenue, Kempton Park Central
@@ -126,7 +126,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Support
 
-For support, email info@arwyp.co.za or contact Dr. Salumu's office directly.
+For support, email info@drkabongosalumu.co.za or contact Dr. Salumu's office directly.
 
 ## 🔄 Deployment
 

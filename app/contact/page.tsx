@@ -56,7 +56,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className={`font-medium text-black ${getHeadingClass()}`}>Directions</p>
-                    <p className={`text-gray-600 ${getBodyClass()}`}>Located within the Arwyp Medical Centre.</p>
+                    <p className={`text-gray-600 ${getBodyClass()}`}>Located on Pine Avenue in Kempton Park.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <p className={`text-gray-600 ${getBodyClass()}`}>+27 83 587 5879</p>
                   </div>
                   <div>
-                    <p className={`font-medium text-black ${getHeadingClass()}`}>Arwyp Medical Centre General</p>
+                    <p className={`font-medium text-black ${getHeadingClass()}`}>Medical Centre General</p>
                     <p className={`text-gray-600 ${getBodyClass()}`}>+27 11 922 1000</p>
                   </div>
                   <div>
@@ -94,11 +94,11 @@ export default function ContactPage() {
                 <CardContent className="space-y-3">
                   <div>
                     <p className={`font-medium text-black ${getHeadingClass()}`}>General Inquiries</p>
-                    <p className={`text-gray-600 ${getBodyClass()}`}>info@arwyp.co.za</p>
+                    <p className={`text-gray-600 ${getBodyClass()}`}>info@drkabongosalumu.co.za</p>
                   </div>
                   <div>
-                    <p className={`font-medium text-black ${getHeadingClass()}`}>Affiliated With</p>
-                    <p className={`text-gray-600 ${getBodyClass()}`}>Arwyp Medical Centre</p>
+                    <p className={`font-medium text-black ${getHeadingClass()}`}>Practice Location</p>
+                    <p className={`text-gray-600 ${getBodyClass()}`}>20 Pine Avenue, Kempton Park</p>
                   </div>
                 </CardContent>
               </Card>
@@ -307,7 +307,7 @@ export default function ContactPage() {
                     </p>
                     <div className="border-t border-red-200 pt-4">
                       <p className={`text-red-700 ${getBodyClass()}`}>
-                        <strong>Casualty Unit:</strong> Arwyp Medical Centre
+                        <strong>Emergency Unit:</strong> 011-922-1172
                         <br />
                         Available 24/7 for emergency medical needs
                       </p>
@@ -364,7 +364,7 @@ export default function ContactPage() {
                 For medical emergencies, call 10177 for an ambulance or 10111 for the police or go to your nearest
                 emergency room.
               </p>
-              <p className={`text-gray-400 ${getBodyClass()}`}>Casualty Unit: Arwyp Medical Centre</p>
+              <p className={`text-gray-400 ${getBodyClass()}`}>Emergency Unit: 011-922-1172</p>
             </div>
           </div>
           <div

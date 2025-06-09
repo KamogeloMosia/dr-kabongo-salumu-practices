@@ -177,7 +177,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className={`text-gray-600 ${getBodyClass()}`}>
-                  24/7 emergency care at Arwyp Medical Centre.
+                  24/7 emergency care available.
                 </CardDescription>
               </CardContent>
             </Card>

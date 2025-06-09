@@ -96,7 +96,7 @@ export default function HomePage() {
               className={`text-lg md:text-xl text-white/90 max-w-2xl mb-8 leading-relaxed ${getBodyClass()}`}
               variants={fadeIn}
             >
-              Over 20 years of dedicated medical care at Arwyp Medical Centre
+              Over 20 years of dedicated medical care in Kempton Park
             </motion.p>
             <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeIn}>
               <Button
@@ -165,8 +165,8 @@ export default function HomePage() {
                     trust, expertise, and genuine care for each patient.
                   </p>
                   <p className={`text-gray-600 leading-relaxed ${getBodyClass()}`}>
-                    In addition to his general practice, Dr. Salumu also dedicates time to the Casualty Unit of Arwyp
-                    Medical Centre, providing critical care and emergency medical services to those in urgent need.
+                    In addition to his general practice, Dr. Salumu also dedicates time to emergency care,
+                    providing critical care and emergency medical services to those in urgent need.
                   </p>
                 </div>
               </motion.div>
@@ -240,7 +240,7 @@ export default function HomePage() {
                 </div>
                 <h4 className={`font-bold text-lg mb-2 ${getHeadingClass()}`}>Emergency Care</h4>
                 <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                  Casualty unit expertise at Arwyp Medical Centre
+                  Emergency medicine expertise and casualty unit services
                 </p>
               </motion.div>
             </motion.div>
@@ -255,7 +255,7 @@ export default function HomePage() {
                   <div className="space-y-4">
                     <div>
                       <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>
-                        Primary Location - Arwyp Medical Centre
+                        Primary Location
                       </h4>
                       <div className="flex items-start space-x-2 mb-2">
                         <span className="material-symbols-outlined text-gray-500 mt-1 flex-shrink-0">location_on</span>
@@ -267,7 +267,7 @@ export default function HomePage() {
                         <span className="material-symbols-outlined text-gray-500 mt-1 flex-shrink-0">call</span>
                         <p className={`text-gray-600 text-sm ${getBodyClass()}`}>+27 83 587 5879</p>
                       </div>
-                      <p className={`text-gray-500 text-xs mt-2 ${getBodyClass()}`}>Casualty Unit & General Practice</p>
+                      <p className={`text-gray-500 text-xs mt-2 ${getBodyClass()}`}>General Practice & Emergency Care</p>
                     </div>
                     <div className="border-t border-gray-200 pt-4">
                       <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>Alternative Location</h4>
@@ -469,7 +469,7 @@ export default function HomePage() {
                   Emergency Care
                 </h3>
                 <p className={`text-gray-600 leading-relaxed text-sm mb-4 ${getBodyClass()}`}>
-                  Casualty unit services at Arwyp Medical Centre for urgent medical situations and emergencies.
+                  Emergency medical services for urgent medical situations and emergencies.
                 </p>
                 <ul className={`text-gray-500 text-xs space-y-1 ${getBodyClass()}`}>
                   <li>• 24/7 emergency response</li>
@@ -532,7 +532,7 @@ export default function HomePage() {
                   <h3 className={`font-bold text-xl mb-6 ${getHeadingClass()}`}>Primary Practice Location</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>Arwyp Medical Centre</h4>
+                      <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>Medical Practice</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <span className="material-symbols-outlined text-gray-600 mt-1 flex-shrink-0">
@@ -550,7 +550,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <p className={`text-gray-600 text-sm mt-3 font-medium ${getBodyClass()}`}>
-                        Casualty Unit & General Practice
+                        General Practice & Emergency Care
                       </p>
                     </div>
                   </div>
@@ -580,7 +580,7 @@ export default function HomePage() {
                   <h3 className={`font-bold text-xl mb-6 ${getHeadingClass()}`}>Emergency Contacts</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>Arwyp Medical Centre</h4>
+                      <h4 className={`font-semibold text-black mb-2 ${getBodyClass()}`}>Medical Centre</h4>
                       <div className="space-y-2">
                         <div className="flex items-center space-x-3">
                           <span className="material-symbols-outlined text-gray-600 flex-shrink-0">call</span>
