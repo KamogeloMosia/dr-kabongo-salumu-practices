@@ -19,7 +19,7 @@ export default function PricingPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
             <div>
               <h1 className={`text-3xl font-bold ${getHeadingClass()}`}>Pricing Management</h1>
-              <p className={`mt-2 text-muted-foreground ${getBodyClass()}`}>Update service pricing and descriptions</p>
+              <p className={`mt-2 text-muted-foreground ${getBodyClass()}`}>Update service pricing and descriptions for Medi Centre</p>
             </div>
             <div className="mt-4 md:mt-0">
               <Button

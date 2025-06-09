@@ -19,7 +19,7 @@ export default function AppointmentsPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
             <div>
               <h1 className={`text-3xl font-bold ${getHeadingClass()}`}>Appointments</h1>
-              <p className={`mt-2 text-muted-foreground ${getBodyClass()}`}>View and manage patient appointments</p>
+              <p className={`mt-2 text-muted-foreground ${getBodyClass()}`}>View and manage patient appointments at Medi Centre</p>
             </div>
             <div className="mt-4 md:mt-0">
               <Button

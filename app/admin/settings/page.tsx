@@ -57,7 +57,7 @@ export default function SettingsPage() {
       "Comprehensive healthcare services for you and your family with over 20 years of experience in general practice medicine.",
     aboutDescription:
       "Dr. Kabongo Salumu has been serving the Johannesburg and Kempton Park communities for over 20 years, bringing a wealth of knowledge and experience to general practice medicine.",
-    address: "20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa",
+    address: "Medi Centre, 14 Central Avenue, Kempton Park 1619, Gauteng, South Africa",
     mainPhone: "+27 83 587 5879",
     email: "info@drkabongosalumu.co.za",
     emergencyPhone: "+27 11 922 1172",

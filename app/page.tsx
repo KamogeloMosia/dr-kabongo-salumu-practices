@@ -260,7 +260,7 @@ export default function HomePage() {
                       <div className="flex items-start space-x-2 mb-2">
                         <span className="material-symbols-outlined text-gray-500 mt-1 flex-shrink-0">location_on</span>
                         <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                          20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa
+                          Medi Centre, 14 Central Avenue, Kempton Park 1619, Gauteng, South Africa
                         </p>
                       </div>
                       <div className="flex items-start space-x-2">
@@ -274,7 +274,7 @@ export default function HomePage() {
                       <div className="flex items-start space-x-2 mb-2">
                         <span className="material-symbols-outlined text-gray-500 mt-1 flex-shrink-0">location_on</span>
                         <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                          14 Central Avenue, Kempton Park Central
+                          Medi Centre, 14 Central Avenue, Kempton Park 1619
                         </p>
                       </div>
                       <div className="flex items-start space-x-2">
@@ -539,7 +539,8 @@ export default function HomePage() {
                             location_on
                           </span>
                           <div>
-                            <p className={`text-gray-700 ${getBodyClass()}`}>20 Pine Avenue</p>
+                            <p className={`text-gray-700 ${getBodyClass()}`}>Medi Centre</p>
+                            <p className={`text-gray-700 ${getBodyClass()}`}>14 Central Avenue</p>
                             <p className={`text-gray-700 ${getBodyClass()}`}>Kempton Park, 1619</p>
                             <p className={`text-gray-700 ${getBodyClass()}`}>Gauteng, South Africa</p>
                           </div>
@@ -562,9 +563,9 @@ export default function HomePage() {
                     <div className="flex items-start space-x-3">
                       <span className="material-symbols-outlined text-gray-600 mt-1 flex-shrink-0">location_on</span>
                       <div>
+                        <p className={`text-gray-700 ${getBodyClass()}`}>Medi Centre</p>
                         <p className={`text-gray-700 ${getBodyClass()}`}>14 Central Avenue</p>
-                        <p className={`text-gray-700 ${getBodyClass()}`}>Kempton Park Central</p>
-                        <p className={`text-gray-700 ${getBodyClass()}`}>Kempton Park</p>
+                        <p className={`text-gray-700 ${getBodyClass()}`}>Kempton Park, 1619</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">

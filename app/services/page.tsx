@@ -21,13 +21,13 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-16">
             <Badge variant="outline" className={`text-black border-black ${getBodyClass()}`}>
-              Comprehensive Healthcare Services
+              Comprehensive Healthcare Services at Medi Centre
             </Badge>
             <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center sm:text-left ${getHeadingClass()}`}>
               Our Services
             </h1>
             <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 leading-relaxed text-left ${getBodyClass()}`}>
-              Comprehensive care for all ages. See our main services below.
+              Comprehensive care for all ages at Medi Centre, 14 Central Avenue, Kempton Park 1619. See our main services below.
             </p>
           </div>
         </div>

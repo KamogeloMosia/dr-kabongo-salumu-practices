@@ -52,7 +52,7 @@ export default function AdminDashboard() {
                   <span>Site Settings</span>
                 </CardTitle>
                 <CardDescription className={`text-muted-foreground ${getBodyClass()}`}>
-                  Manage website content, contact information, and site settings
+                  Manage website content, contact information, and Medi Centre settings
                 </CardDescription>
               </CardHeader>
               <CardContent>

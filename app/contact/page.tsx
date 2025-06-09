@@ -51,12 +51,12 @@ export default function ContactPage() {
                   <div>
                     <p className={`font-medium text-black ${getHeadingClass()}`}>Address</p>
                     <p className={`text-gray-600 ${getBodyClass()}`}>
-                      20 Pine Avenue, Kempton Park, 1619, Gauteng, South Africa
+                      Medi Centre, 14 Central Avenue, Kempton Park 1619, Gauteng, South Africa
                     </p>
                   </div>
                   <div>
                     <p className={`font-medium text-black ${getHeadingClass()}`}>Directions</p>
-                    <p className={`text-gray-600 ${getBodyClass()}`}>Located on Pine Avenue in Kempton Park.</p>
+                    <p className={`text-gray-600 ${getBodyClass()}`}>Located at Medi Centre on Central Avenue in Kempton Park.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className={`font-medium text-black ${getHeadingClass()}`}>Practice Location</p>
-                    <p className={`text-gray-600 ${getBodyClass()}`}>20 Pine Avenue, Kempton Park</p>
+                    <p className={`text-gray-600 ${getBodyClass()}`}>Medi Centre, 14 Central Avenue, Kempton Park 1619</p>
                   </div>
                 </CardContent>
               </Card>

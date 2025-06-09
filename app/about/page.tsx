@@ -27,7 +27,7 @@ export default function AboutPage() {
               About Dr. Kabongo Salumu
             </h1>
             <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 leading-relaxed text-left ${getBodyClass()}`}>
-              Dr. Kabongo Salumu is a board-certified general practitioner with over 20 years of experience in Kempton Park. He provides trusted, compassionate care for families and individuals of all ages.
+              Dr. Kabongo Salumu is a board-certified general practitioner with over 20 years of experience at Medi Centre in Kempton Park. He provides trusted, compassionate care for families and individuals of all ages.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function AboutPage() {
             <div className="space-y-3 md:space-y-6 text-center lg:text-left">
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Experience & Philosophy</h2>
               <p className={`text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>
-                Dr. Salumu has served the Kempton Park community for over two decades. He believes in patient-centered, evidence-based care and treats every patient with respect and empathy.
+                Dr. Salumu has served the Kempton Park community for over two decades at Medi Centre. He believes in patient-centered, evidence-based care and treats every patient with respect and empathy.
               </p>
               <p className={`text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>
                 He also works in emergency care services, providing urgent medical attention when needed.
@@ -251,7 +251,7 @@ export default function AboutPage() {
             <div>
               <h3 className={`font-semibold mb-2 text-base ${getHeadingClass()}`}>Emergency</h3>
               <p className={`text-gray-400 mb-1 text-sm ${getBodyClass()}`}>For emergencies, call 112 or go to your nearest ER.</p>
-              <p className={`text-gray-400 text-sm ${getBodyClass()}`}>After-hours: 011-922-1000</p>
+              <p className={`text-gray-400 text-sm ${getBodyClass()}`}>Medi Centre: 011-922-1000</p>
             </div>
           </div>
           <div className={`border-t border-primary-foreground/20 mt-6 pt-6 text-center text-gray-400 text-xs ${getBodyClass()}`}>
