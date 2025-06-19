@@ -1,8 +1,17 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
 
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export default function FloatingChat() {
   const [showChatInput, setShowChatInput] = useState(false);
+  const [input, setInput] = useState("");
+  const [chat, setChat] = useState<ChatMessage[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const chatInputRef = useRef<HTMLDivElement>(null);
 
   // Close chat input when clicking outside
@@ -20,18 +29,65 @@ export default function FloatingChat() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [showChatInput]);
 
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!input.trim()) return;
+    const userMessage: ChatMessage = { role: 'user', content: input };
+    setChat((prev) => [...prev, userMessage]);
+    setLoading(true);
+    setError(null);
+    setInput("");
+    try {
+      // Replace with your Gemini API endpoint and API key
+      const apiKey = "YOUR_GEMINI_API_KEY";
+      const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey;
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: userMessage.content }] }],
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to get response from Gemini");
+      const data = await res.json();
+      const geminiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.";
+      setChat((prev) => [...prev, { role: 'assistant', content: geminiReply }]);
+    } catch (err: any) {
+      setError("Error: " + (err.message || "Unknown error"));
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 1000 }}>
       {showChatInput && (
-        <div ref={chatInputRef} className="mb-3 flex flex-col items-end">
-          <form className="bg-white rounded-full shadow-lg px-4 py-2 flex items-center gap-2 w-64 max-w-xs border border-gray-200" onSubmit={e => { e.preventDefault(); setShowChatInput(false); }}>
+        <div ref={chatInputRef} className="mb-3 flex flex-col items-end w-80 max-w-xs">
+          <div className="bg-white rounded-lg shadow-lg p-3 mb-2 w-full max-h-64 overflow-y-auto text-sm">
+            {chat.length === 0 && <div className="text-gray-400">Ask a medical question...</div>}
+            {chat.map((msg, i) => (
+              <div key={i} className={msg.role === 'user' ? 'text-right mb-2' : 'text-left mb-2'}>
+                <span className={msg.role === 'user' ? 'bg-primary text-white rounded-full px-3 py-1 inline-block' : 'bg-gray-100 text-gray-800 rounded-full px-3 py-1 inline-block'}>
+                  {msg.content}
+                </span>
+              </div>
+            ))}
+            {loading && <div className="text-gray-400">Gemini is typing...</div>}
+            {error && <div className="text-red-500">{error}</div>}
+          </div>
+          <form className="bg-white rounded-full shadow-lg px-4 py-2 flex items-center gap-2 w-full border border-gray-200" onSubmit={handleSubmit}>
             <input
               type="text"
               className="flex-1 border-none outline-none text-sm px-0 bg-transparent"
               placeholder="Ask a question..."
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              disabled={loading}
               autoFocus
             />
-            <button type="submit" className="text-primary">
+            <button type="submit" className="text-primary" disabled={loading || !input.trim()}>
               <span className="material-symbols-outlined">send</span>
             </button>
           </form>
