@@ -66,42 +66,43 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
           style={{ backgroundImage: `url(${backgroundImages[currentImageIndex]})` }}
         ></div>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
+        {/* Dark Overlay - increase opacity for better text visibility */}
+        <div className="absolute inset-0 bg-black/75"></div>
         {/* Hero Content */}
-        <motion.div style={{ opacity, scale }} className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <motion.div className="max-w-4xl" initial="hidden" animate="visible" variants={staggerContainer}>
-            <motion.div className="mb-6" variants={fadeIn}>
+        <motion.div style={{ opacity, scale }} className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+          <motion.div className="max-w-2xl md:max-w-4xl" initial="hidden" animate="visible" variants={staggerContainer}>
+            <motion.div className="mb-4 md:mb-6" variants={fadeIn}>
               <span
-                className={`inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium text-white mb-4 ${getBodyClass()}`}
+                className={`inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs md:text-sm font-medium text-white mb-4 ${getBodyClass()}`}
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}
               >
                 General Practitioner • Kempton Park
               </span>
             </motion.div>
             <motion.h1
-              className={`text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-6 ${getHeadingClass()}`}
+              className={`text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-4 md:mb-6 ${getHeadingClass()}`}
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.85)' }}
               variants={fadeIn}
             >
               Dr. Kabongo Salumu
             </motion.h1>
             <motion.p
-              className={`text-lg md:text-xl text-white/90 max-w-2xl mb-8 leading-relaxed ${getBodyClass()}`}
+              className={`text-base md:text-xl text-white/90 max-w-xs md:max-w-2xl mb-6 md:mb-8 leading-relaxed line-clamp-2 md:line-clamp-none ${getBodyClass()}`}
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}
               variants={fadeIn}
             >
-              Over 20 years of dedicated medical care in Kempton Park
+              20+ years of dedicated medical care in Kempton Park
             </motion.p>
-            <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeIn}>
+            <motion.div className="flex flex-col sm:flex-row gap-3 md:gap-4" variants={fadeIn}>
               <Button
                 asChild
-                className={`px-6 py-3 border-2 border-primary bg-primary text-primary-foreground font-medium rounded-full hover:bg-white hover:text-black hover:border-black transition-all text-sm shadow-lg ${getBodyClass()}`}
+                className={`w-full sm:w-auto px-4 py-2 border-2 border-primary bg-primary text-primary-foreground font-medium rounded-full hover:bg-white hover:text-black hover:border-black transition-all text-sm ${getBodyClass()}`}
               >
                 <Link href="/contact">
                   Book Appointment
@@ -116,8 +117,8 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-10 md:py-20 bg-white">
+        <div className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-6xl mx-auto"
             initial="hidden"
@@ -125,31 +126,30 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-10 md:mb-16">
               <div className="w-full md:w-1/3 flex-shrink-0 flex justify-center">
                 <Image
                   src="/images/Medical research-pana.png"
                   alt="About Dr. Kabongo Salumu"
                   width={300}
                   height={400}
-                  className="rounded-lg shadow-md w-full max-w-xs h-auto object-cover"
+                  className="w-full h-auto mx-auto"
                   priority
                 />
               </div>
               <div className="flex-1">
                 <span
-                  className={`inline-block px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 mb-4 tracking-widest uppercase ${getBodyClass()}`}
+                  className={`inline-block px-4 py-2 bg-gray-100 rounded-full text-xs font-bold text-gray-800 mb-2 md:mb-4 tracking-widest uppercase ${getBodyClass()}`}
                 >
                   ABOUT
                 </span>
                 <h2
-                  className={`text-3xl md:text-4xl lg:text-5xl font-black text-black mb-6 tracking-tight leading-tight ${getHeadingClass()}`}
+                  className={`text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 tracking-tight leading-tight ${getHeadingClass()}`}
                 >
                   About Dr. Kabongo Salumu
                 </h2>
-                <p className={`text-lg text-gray-600 max-w-3xl leading-relaxed ${getBodyClass()}`}>
-                  Dedicated to providing exceptional healthcare with compassion, expertise, and a commitment to your
-                  well-being
+                <p className={`text-base md:text-lg text-gray-600 max-w-xs md:max-w-3xl leading-relaxed line-clamp-3 md:line-clamp-none ${getBodyClass()}`}>
+                  Exceptional healthcare with compassion, expertise, and a commitment to your well-being.
                 </p>
               </div>
             </div>
@@ -213,36 +213,25 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12" variants={fadeIn}>
-              <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200">
-                <div className="bg-gray-100 p-4 rounded-full w-fit mb-4">
-                  <span className="material-symbols-outlined text-gray-600">calendar_month</span>
-                </div>
-                <h4 className={`font-bold text-lg mb-2 ${getHeadingClass()}`}>20+ Years</h4>
-                <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                  Experience in general practice medicine since 2001
-                </p>
+            <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" variants={fadeIn}>
+              {/* Example Card: 20+ Years */}
+              <div className="bg-gradient-to-br from-gray-50 to-white p-5 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
+                <span className="material-symbols-outlined text-primary mb-2 text-3xl">calendar_month</span>
+                <h4 className={`font-bold text-base mb-1 ${getHeadingClass()}`}>20+ Years</h4>
+                <p className={`text-gray-600 text-xs ${getBodyClass()}`}>Experience since 2001</p>
               </div>
-
-              <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200">
-                <div className="bg-gray-100 p-4 rounded-full w-fit mb-4">
-                  <span className="material-symbols-outlined text-gray-600">stethoscope</span>
-                </div>
-                <h4 className={`font-bold text-lg mb-2 ${getHeadingClass()}`}>International Training</h4>
-                <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                  Medical degree obtained through international studies
-                </p>
+              {/* Example Card: International Training */}
+              <div className="bg-gradient-to-br from-gray-50 to-white p-5 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
+                <span className="material-symbols-outlined text-primary mb-2 text-3xl">stethoscope</span>
+                <h4 className={`font-bold text-base mb-1 ${getHeadingClass()}`}>International Training</h4>
+                <p className={`text-gray-600 text-xs ${getBodyClass()}`}>Global medical degree</p>
               </div>
-
-              <motion.div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200">
-                <div className="bg-gray-100 p-4 rounded-full w-fit mb-4">
-                  <span className="material-symbols-outlined text-gray-600">emergency</span>
-                </div>
-                <h4 className={`font-bold text-lg mb-2 ${getHeadingClass()}`}>Emergency Care</h4>
-                <p className={`text-gray-600 text-sm ${getBodyClass()}`}>
-                  Emergency medicine expertise and casualty unit services
-                </p>
-              </motion.div>
+              {/* Example Card: Emergency Care */}
+              <div className="bg-gradient-to-br from-gray-50 to-white p-5 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
+                <span className="material-symbols-outlined text-primary mb-2 text-3xl">emergency</span>
+                <h4 className={`font-bold text-base mb-1 ${getHeadingClass()}`}>Emergency Care</h4>
+                <p className={`text-gray-600 text-xs ${getBodyClass()}`}>24/7 medical help</p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -286,24 +275,36 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className={`font-bold text-xl mb-4 ${getHeadingClass()}`}>Services Overview</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Acute Care</p>
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-8">
+                    {/* Acute Care */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">healing</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Acute Care</span>
                     </div>
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Chronic Disease</p>
+                    {/* Chronic Disease */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">verified</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Chronic Disease</span>
                     </div>
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Preventive Care</p>
+                    {/* Preventive Care */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">schedule</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Preventive Care</span>
                     </div>
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Emergency Care</p>
+                    {/* Emergency Care */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">emergency</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Emergency</span>
                     </div>
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Family Medicine</p>
+                    {/* Family Medicine */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">group</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Family Medicine</span>
                     </div>
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <p className={`text-sm font-medium text-gray-700 ${getBodyClass()}`}>Minor Procedures</p>
+                    {/* Minor Procedures */}
+                    <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center text-center">
+                      <span className="material-symbols-outlined text-primary mb-1 text-2xl">medical_services</span>
+                      <span className={`font-medium text-xs text-gray-700 ${getBodyClass()}`}>Minor Procedures</span>
                     </div>
                   </div>
                 </div>
@@ -313,7 +314,7 @@ export default function HomePage() {
             <motion.div className="mt-12" variants={fadeIn}>
               <Button
                 asChild
-                className={`px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/80 transition-all transform hover:scale-105 shadow-lg text-sm group ${getBodyClass()}`}
+                className={`w-full sm:w-auto px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/80 transition-all text-sm group ${getBodyClass()}`}
               >
                 <Link href="/contact" className="flex items-center">
                   Contact Dr. Salumu
@@ -327,7 +328,7 @@ export default function HomePage() {
         </div>
       </section>
       <section id="services" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-6xl mx-auto"
             initial="hidden"
@@ -487,7 +488,7 @@ export default function HomePage() {
                 </p>
                 <Button
                   asChild
-                  className={`px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/80 transition-all group text-sm ${getBodyClass()}`}
+                  className={`w-full sm:w-auto px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/80 transition-all text-sm group ${getBodyClass()}`}
                 >
                   <Link href="/contact" className="flex items-center">
                     Contact for Services
@@ -501,8 +502,44 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+      {/* Blog Section */}
+      <section id="blog" className="py-10 md:py-20 bg-gray-100">
+        <div className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 md:space-y-4 mb-6 md:mb-12">
+            <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-full text-xs font-bold mb-2 tracking-widest uppercase">Blog</span>
+            <h2 className={`text-2xl md:text-4xl font-bold text-black ${getHeadingClass()}`}>Health Articles & Tips</h2>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto ${getBodyClass()}`}>Explore our latest articles on health, wellness, and medical topics.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-6">
+            {/* Blog post previews (static for now) */}
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex flex-col">
+              <span className="material-symbols-outlined text-primary text-3xl mb-2 self-center">favorite</span>
+              <h3 className={`font-semibold text-lg mb-1 ${getHeadingClass()}`}>Heart Health Basics</h3>
+              <p className={`text-xs text-gray-600 mb-2 line-clamp-2 ${getBodyClass()}`}>Learn how to keep your heart healthy with simple lifestyle changes and regular check-ups.</p>
+              <Link href="/blog/heart-health" className="text-primary text-xs font-medium mt-auto">Read More</Link>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex flex-col">
+              <span className="material-symbols-outlined text-primary text-3xl mb-2 self-center">vaccines</span>
+              <h3 className={`font-semibold text-lg mb-1 ${getHeadingClass()}`}>Vaccination Facts</h3>
+              <p className={`text-xs text-gray-600 mb-2 line-clamp-2 ${getBodyClass()}`}>Why vaccines matter for you and your family, and how they protect our community.</p>
+              <Link href="/blog/vaccination-facts" className="text-primary text-xs font-medium mt-auto">Read More</Link>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex flex-col">
+              <span className="material-symbols-outlined text-primary text-3xl mb-2 self-center">psychology</span>
+              <h3 className={`font-semibold text-lg mb-1 ${getHeadingClass()}`}>Mental Wellness</h3>
+              <p className={`text-xs text-gray-600 mb-2 line-clamp-2 ${getBodyClass()}`}>Tips for managing stress, improving sleep, and supporting your mental health.</p>
+              <Link href="/blog/mental-wellness" className="text-primary text-xs font-medium mt-auto">Read More</Link>
+            </div>
+          </div>
+          <div className="text-center">
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/80 w-full sm:w-auto">
+              <Link href="/blog">View All Articles</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
       <section id="contact" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-6xl mx-auto"
             initial="hidden"

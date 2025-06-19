@@ -17,70 +17,54 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-16">
-            <Badge variant="outline" className={`text-black border-black ${getBodyClass()}`}>
-              Board Certified General Practitioner
-            </Badge>
-            <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center sm:text-left ${getHeadingClass()}`}>
-              About Dr. Kabongo Salumu
-            </h1>
-            <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 leading-relaxed text-left ${getBodyClass()}`}>
-              Dr. Kabongo Salumu is a board-certified general practitioner with over 20 years of experience at Medi Centre in Kempton Park. He provides trusted, compassionate care for families and individuals of all ages.
-            </p>
+      <section className="py-8 md:py-20 bg-white">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="text-center space-y-3 md:space-y-6 mb-6 md:mb-16">
+            <Badge variant="outline" className={`text-black border-black ${getBodyClass()}`}>Board Certified General Practitioner</Badge>
+            <h1 className={`text-2xl md:text-4xl font-bold text-black leading-tight text-center sm:text-left ${getHeadingClass()}`}>About Dr. Kabongo Salumu</h1>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto sm:mx-0 leading-relaxed text-left line-clamp-3 md:line-clamp-none ${getBodyClass()}`}>Dr. Kabongo Salumu is a board-certified general practitioner with 20+ years of experience at Medi Centre in Kempton Park. Trusted, compassionate care for all ages.</p>
           </div>
         </div>
       </section>
 
       {/* Main About Section */}
-      <section className="py-8 md:py-20 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
+      <section className="py-6 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto order-first lg:order-first">
               <Image
                 src="/images/Hospital wheelchair-amico.png"
                 alt="Dr. Kabongo Salumu"
                 width={300}
                 height={400}
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
+                className="w-full h-auto mx-auto"
                 priority
               />
             </div>
-            <div className="space-y-3 md:space-y-6 text-center lg:text-left">
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Experience & Philosophy</h2>
-              <p className={`text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>
-                Dr. Salumu has served the Kempton Park community for over two decades at Medi Centre. He believes in patient-centered, evidence-based care and treats every patient with respect and empathy.
-              </p>
-              <p className={`text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>
-                He also works in emergency care services, providing urgent medical attention when needed.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
+            <div className="space-y-2 md:space-y-6 text-center lg:text-left">
+              <h2 className={`text-lg sm:text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Experience & Philosophy</h2>
+              <p className={`text-gray-600 leading-relaxed text-left text-sm md:text-base line-clamp-3 md:line-clamp-none ${getBodyClass()}`}>Over two decades serving Kempton Park. Patient-centered, evidence-based care for every patient.</p>
+              <p className={`text-gray-600 leading-relaxed text-left text-sm md:text-base line-clamp-2 md:line-clamp-none ${getBodyClass()}`}>Also provides urgent emergency care services.</p>
+              <div className="space-y-2 md:space-y-4">
+                <div className="flex items-start space-x-2 md:space-x-3">
                   <Heart className="h-5 w-5 text-black mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className={`font-semibold text-black text-left ${getHeadingClass()}`}>Patient-Centered</h3>
-                    <p className={`text-gray-600 text-left ${getBodyClass()}`}>
-                      Personalized care for every patient.
-                    </p>
+                    <h3 className={`font-semibold text-black text-left text-sm md:text-base ${getHeadingClass()}`}>Patient-Centered</h3>
+                    <p className={`text-gray-600 text-left text-xs md:text-sm ${getBodyClass()}`}>Personalized care for every patient.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-2 md:space-x-3">
                   <Shield className="h-5 w-5 text-black mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className={`font-semibold text-black text-left ${getHeadingClass()}`}>Evidence-Based</h3>
-                    <p className={`text-gray-600 text-left ${getBodyClass()}`}>
-                      Up-to-date, proven treatments.
-                    </p>
+                    <h3 className={`font-semibold text-black text-left text-sm md:text-base ${getHeadingClass()}`}>Evidence-Based</h3>
+                    <p className={`text-gray-600 text-left text-xs md:text-sm ${getBodyClass()}`}>Up-to-date, proven treatments.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-2 md:space-x-3">
                   <Users className="h-5 w-5 text-black mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className={`font-semibold text-black text-left ${getHeadingClass()}`}>Family-Focused</h3>
-                    <p className={`text-gray-600 text-left ${getBodyClass()}`}>
-                      Care for all ages, from children to seniors.
-                    </p>
+                    <h3 className={`font-semibold text-black text-left text-sm md:text-base ${getHeadingClass()}`}>Family-Focused</h3>
+                    <p className={`text-gray-600 text-left text-xs md:text-sm ${getBodyClass()}`}>Care for all ages, from children to seniors.</p>
                   </div>
                 </div>
               </div>
@@ -90,22 +74,22 @@ export default function AboutPage() {
       </section>
 
       {/* Education & Credentials */}
-      <section className="py-8 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-2 md:space-y-4 mb-6 md:mb-12">
-            <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-black ${getHeadingClass()}`}>Education & Credentials</h2>
-            <p className={`text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto ${getBodyClass()}`}>A strong educational foundation and ongoing commitment to professional development.</p>
-            <div className="flex justify-center my-4">
+      <section className="py-6 md:py-20 bg-white">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="text-center space-y-2 md:space-y-4 mb-4 md:mb-12">
+            <h2 className={`text-lg sm:text-2xl md:text-3xl font-bold text-black ${getHeadingClass()}`}>Education & Credentials</h2>
+            <p className={`text-xs sm:text-base md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto ${getBodyClass()}`}>Strong educational foundation and ongoing professional development.</p>
+            <div className="flex justify-center my-2 md:my-4">
               <Image
                 src="/images/Retroviruses-cuate.png"
                 alt="Credentials"
                 width={300}
                 height={220}
-                className="rounded-lg shadow-md w-full max-w-xs h-auto object-cover"
+                className="w-full h-auto mx-auto"
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
             <Card className="hover:shadow-lg transition-shadow border-2 border-gray-200">
               <CardHeader>
                 <CardTitle className={`flex items-center space-x-2 text-lg md:text-xl ${getHeadingClass()}`}>
@@ -210,16 +194,16 @@ export default function AboutPage() {
       </section>
 
       {/* Personal Touch */}
-      <section className="py-8 md:py-20 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center space-y-3 md:space-y-6">
-            <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Beyond Medicine</h2>
-            <p className={`text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>Outside the practice, Dr. Salumu enjoys family time, reading, and community events.</p>
-            <div className="pt-4 md:pt-6">
+      <section className="py-6 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center space-y-2 md:space-y-6">
+            <h2 className={`text-lg sm:text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Beyond Medicine</h2>
+            <p className={`text-xs sm:text-base md:text-lg text-gray-600 leading-relaxed text-left ${getBodyClass()}`}>Outside the practice, Dr. Salumu enjoys family time, reading, and community events.</p>
+            <div className="pt-2 md:pt-6">
               <Button
                 asChild
                 size="lg"
-                className={`bg-primary text-primary-foreground hover:bg-primary/80 w-full sm:w-auto ${getBodyClass()}`}
+                className={`bg-primary text-primary-foreground hover:bg-primary/80 w-full sm:w-auto text-sm md:text-base ${getBodyClass()}`}
               >
                 <Link href="/contact">Schedule Your Appointment</Link>
               </Button>

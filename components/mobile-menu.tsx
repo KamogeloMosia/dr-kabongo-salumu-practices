@@ -75,6 +75,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             About
           </Link>
           <Link
+            href="/blog"
+            className={`p-3 text-base rounded-md transition-colors ${pathname.startsWith("/blog") ? "font-semibold bg-accent" : "hover:bg-accent"} ${getBodyClass()}`}
+            onClick={onClose}
+          >
+            Blog
+          </Link>
+          <Link
             href="/services"
             className={`p-3 text-base rounded-md transition-colors ${pathname === "/services" ? "font-semibold bg-accent" : "hover:bg-accent"} ${getBodyClass()}`}
             onClick={onClose}
@@ -97,14 +104,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               Admin
             </Link>
           )}
-          <div className="pt-4 mt-4 border-t border-black/10">
-            <Button
-              asChild
-              className={`w-full bg-primary text-primary-foreground hover:bg-primary/80 text-base px-4 py-3 rounded-full shadow-md ${getBodyClass()}`}
-            >
-              <Link href="/contact">Book Appointment</Link>
-            </Button>
-          </div>
         </nav>
       </div>
     </div>

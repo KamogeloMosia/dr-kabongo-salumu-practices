@@ -17,10 +17,7 @@ export default function Header() {
       <header className="border-b border-border bg-card sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary-foreground text-sm">stethoscope</span>
-            </div>
-            <span className={`text-lg font-bold text-foreground ${getHeadingClass()}`}>Dr. Kabongo Salumu</span>
+            <span className={`text-lg font-bold text-foreground ${getHeadingClass()}`}>Dr Salumu</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
             <Link
@@ -55,15 +52,9 @@ export default function Header() {
                 Admin
               </Link>
             )}
-            <Button
-              asChild
-              className={`bg-primary text-primary-foreground hover:bg-primary/80 text-sm px-4 py-2 ${getBodyClass()}`}
-            >
-              <Link href="/contact">Book Appointment</Link>
-            </Button>
           </nav>
-          <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setMobileMenuOpen(true)}>
-            <span className="material-symbols-outlined">menu</span>
+          <Button variant="ghost" size="sm" className="md:hidden shadow-none" onClick={() => setMobileMenuOpen(true)}>
+            <span className="material-symbols-outlined text-base" style={{ fontSize: '20px' }}>menu</span>
           </Button>
         </div>
       </header>

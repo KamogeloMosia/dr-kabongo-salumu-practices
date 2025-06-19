@@ -17,16 +17,16 @@ export default function ServicesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-16">
+      <section className="py-8 md:py-20 bg-white">
+        <div className="container mx-auto px-2 lg:px-6">
+          <div className="text-center space-y-3 md:space-y-6 mb-6 md:mb-16">
             <Badge variant="outline" className={`text-black border-black ${getBodyClass()}`}>
               Comprehensive Healthcare Services at Medi Centre
             </Badge>
-            <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight text-center sm:text-left ${getHeadingClass()}`}>
+            <h1 className={`text-2xl md:text-4xl font-bold text-black leading-tight ${getHeadingClass()}`}>
               Our Services
             </h1>
-            <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 leading-relaxed text-left ${getBodyClass()}`}>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto leading-relaxed line-clamp-3 md:line-clamp-none ${getBodyClass()}`}>
               Comprehensive care for all ages at Medi Centre, 14 Central Avenue, Kempton Park 1619. See our main services below.
             </p>
           </div>
@@ -34,15 +34,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Primary Services */}
-      <section className="py-12 md:py-20 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-            <h2 className={`text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Primary Care</h2>
-            <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 text-left ${getBodyClass()}`}>
+      <section className="py-8 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="text-center space-y-2 md:space-y-4 mb-4 md:mb-12">
+            <h2 className={`text-lg md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Primary Care</h2>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto sm:mx-0 text-left line-clamp-2 md:line-clamp-none ${getBodyClass()}`}>
               General check-ups, chronic care, and preventive medicine.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
             <Card className="hover:shadow-lg transition-shadow border-2 border-gray-200">
               <CardHeader>
                 <CardTitle className={`flex items-center space-x-2 text-lg md:text-xl ${getHeadingClass()}`}>
@@ -131,15 +131,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Specialized Services */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-            <h2 className={`text-2xl md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Specialized Care</h2>
-            <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto sm:mx-0 text-left ${getBodyClass()}`}>
+      <section className="py-8 md:py-20 bg-white">
+        <div className="container mx-auto px-2 lg:px-6">
+          <div className="text-center space-y-2 md:space-y-4 mb-4 md:mb-12">
+            <h2 className={`text-lg md:text-3xl font-bold text-black text-center sm:text-left ${getHeadingClass()}`}>Specialized Care</h2>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto sm:mx-0 text-left line-clamp-2 md:line-clamp-none ${getBodyClass()}`}>
               Pediatric, urgent, emergency, and travel medicine.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
             <Card className="hover:shadow-lg transition-shadow border-2 border-gray-200">
               <CardHeader>
                 <CardTitle className={`flex items-center space-x-2 text-lg md:text-xl ${getHeadingClass()}`}>
@@ -228,15 +228,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-            <h2 className={`text-2xl md:text-3xl font-bold text-black ${getHeadingClass()}`}>Service Pricing</h2>
-            <p className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto ${getBodyClass()}`}>
-              Transparent pricing for our comprehensive healthcare services.
+      <section className="py-8 md:py-20 bg-white">
+        <div className="container mx-auto px-2 lg:px-6">
+          <div className="text-center space-y-2 md:space-y-4 mb-4 md:mb-12">
+            <h2 className={`text-lg md:text-3xl font-bold text-black ${getHeadingClass()}`}>Service Pricing</h2>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-md md:max-w-2xl mx-auto ${getBodyClass()}`}>
+              Transparent pricing for our healthcare services.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 max-w-5xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow border-2 border-gray-200 text-center">
               <CardHeader>
                 <CardTitle className={`text-lg md:text-xl ${getHeadingClass()}`}>Adult Consultation</CardTitle>
@@ -318,8 +318,8 @@ export default function ServicesPage() {
             </Card>
           </div>
 
-          <div className="text-center mt-8">
-            <p className={`text-sm text-gray-500 ${getBodyClass()}`}>
+          <div className="text-center mt-4 md:mt-8">
+            <p className={`text-xs md:text-sm text-gray-500 ${getBodyClass()}`}>
               * Prices are subject to change. Medical aid schemes accepted. Please contact us for more information.
             </p>
           </div>
@@ -327,14 +327,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Wellness Programs */}
-      <section className="py-12 md:py-20 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="space-y-4 md:space-y-6 text-center lg:text-left">
-              <h2 className={`text-2xl md:text-3xl font-bold text-black ${getHeadingClass()}`}>
+      <section className="py-8 md:py-20 bg-gray-100">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
+            <div className="space-y-2 md:space-y-6 text-center lg:text-left">
+              <h2 className={`text-lg md:text-3xl font-bold text-black ${getHeadingClass()}`}>
                 Wellness & Prevention Programs
               </h2>
-              <p className={`text-gray-600 leading-relaxed ${getBodyClass()}`}>
+              <p className={`text-gray-600 leading-relaxed text-sm md:text-base ${getBodyClass()}`}>
                 We believe in proactive healthcare that focuses on preventing illness and promoting overall wellness.
                 Our comprehensive wellness programs are designed to help you maintain optimal health throughout your
                 life.
@@ -375,7 +375,7 @@ export default function ServicesPage() {
                 alt="Wellness Programs"
                 width={500}
                 height={400}
-                className="rounded-lg shadow-lg mx-auto"
+                className="w-full h-auto mx-auto"
               />
             </div>
           </div>

@@ -191,7 +191,7 @@ function hexToHslString(hex: string): string {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [headingFont, setHeadingFontState] = useState<FontKey>("space-grotesk")
+  const [headingFont, setHeadingFontState] = useState<FontKey>("outfit")
   const [bodyFont, setBodyFontState] = useState<FontKey>("dm-sans")
   const [themeColors, setThemeColorsState] = useState<ThemeColors>(defaultThemeColors)
 
