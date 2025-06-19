@@ -39,7 +39,7 @@ export default function FloatingChat() {
     setInput("");
     try {
       // Replace with your Gemini API endpoint and API key
-      const apiKey = "YOUR_GEMINI_API_KEY";
+      const apiKey = "AIzaSyAYRnpZGaWCbl8WNPl-l2V60aBAnFf9r_0";
       const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey;
       const res = await fetch(endpoint, {
         method: "POST",
