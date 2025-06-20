@@ -45,6 +45,29 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### API Configuration
+
+The website includes an AI chat feature powered by Google's Gemini API. To enable this feature:
+
+1. **Get a Gemini API Key**:
+   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create a new API key
+   - Copy the API key
+
+2. **Set up Environment Variables**:
+   Create a `.env.local` file in the root directory:
+   ```bash
+   # Gemini API Configuration
+   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+3. **Restart the Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+**Note**: The `.env.local` file is already included in `.gitignore` to keep your API key secure. Never commit API keys to version control.
+
 ### Building for Production
 
 \`\`\`bash

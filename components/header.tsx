@@ -39,6 +39,18 @@ export default function Header() {
               Services
             </Link>
             <Link
+              href="/blog"
+              className={`text-sm font-medium hover:text-foreground/70 transition-colors ${getBodyClass()}`}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/faq"
+              className={`text-sm font-medium hover:text-foreground/70 transition-colors ${getBodyClass()}`}
+            >
+              FAQ
+            </Link>
+            <Link
               href="/contact"
               className={`text-sm font-medium hover:text-foreground/70 transition-colors ${getBodyClass()}`}
             >

@@ -82,6 +82,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             Blog
           </Link>
           <Link
+            href="/faq"
+            className={`p-3 text-base rounded-md transition-colors ${pathname === "/faq" ? "font-semibold bg-accent" : "hover:bg-accent"} ${getBodyClass()}`}
+            onClick={onClose}
+          >
+            FAQ
+          </Link>
+          <Link
             href="/services"
             className={`p-3 text-base rounded-md transition-colors ${pathname === "/services" ? "font-semibold bg-accent" : "hover:bg-accent"} ${getBodyClass()}`}
             onClick={onClose}

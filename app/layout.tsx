@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/context/theme-provider"
 import { AuthProvider } from "@/context/auth-context"
 import FloatingChat from "@/components/FloatingChat"
+import StructuredData from "./structured-data"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dr. Kabongo Salumu" />
         <meta name="keywords" content="doctor, general practitioner, Kempton Park, healthcare, medical, family medicine, South Africa, Dr Salumu" />
+        <meta name="google-site-verification" content="AhDPk57l6lJP4R7ke1itVZ6xwDODHmOZuAPO3qJJQ5M" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Dr. Kabongo Salumu - General Practitioner" />
         <meta property="og:description" content="Comprehensive healthcare services with over 20 years of experience in Kempton Park" />
@@ -43,6 +45,15 @@ export default function RootLayout({
         <meta name="twitter:image" content="/images/doctor-icon.svg" />
         <link rel="canonical" href="https://www.drsalumu.xyz/" />
         <link rel="icon" href="/images/medical-symbol.png" type="image/png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Dr Salumu" />
+        <meta name="application-name" content="Dr Salumu" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <StructuredData />
       </head>
       <body className={inter.className}>
         <AuthProvider>

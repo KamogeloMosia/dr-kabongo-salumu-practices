@@ -1,139 +1,213 @@
-'use client'
-import Link from "next/link"
+"use client"
+
+import { useState, useEffect } from "react"
 import { useTheme } from "@/context/theme-provider"
+import { motion } from "framer-motion"
 import Header from "@/components/header"
-import { useState } from "react"
-import type { ReactElement } from "react"
-
-// Article type
-interface Article {
-  key: string
-  icon: string
-  title: string
-  summary: string
-  content: ReactElement
-  readTime: string
-}
-
-const articles: Article[] = [
-  {
-    key: "heart-health",
-    icon: "favorite",
-    title: "Heart Health Basics",
-    summary: "How to keep your heart healthy with simple lifestyle changes and regular check-ups.",
-    readTime: "3 min read",
-    content: (
-      <div className="prose max-w-2xl text-gray-800">
-        <h2>Why Heart Health Matters</h2>
-        <p>Your heart is the engine of your body. Keeping it healthy is key to a long, active life.</p>
-        <h3>Tips for a Healthy Heart</h3>
-        <ul>
-          <li>Eat a balanced diet rich in fruits, vegetables, and whole grains.</li>
-          <li>Exercise regularly—aim for at least 30 minutes most days.</li>
-          <li>Avoid smoking and limit alcohol.</li>
-          <li>Manage stress with relaxation techniques.</li>
-          <li>Get regular check-ups with your doctor.</li>
-        </ul>
-        <h3>When to See a Doctor</h3>
-        <p>If you experience chest pain, shortness of breath, or unusual fatigue, consult a healthcare professional promptly.</p>
-      </div>
-    ),
-  },
-  {
-    key: "vaccination-facts",
-    icon: "vaccines",
-    title: "Vaccination Facts",
-    summary: "Why vaccines matter for you and your family, and how they protect our community.",
-    readTime: "2 min read",
-    content: (
-      <div className="prose max-w-2xl text-gray-800">
-        <h2>What Are Vaccines?</h2>
-        <p>Vaccines help your body build immunity to diseases without getting sick first. They are safe, effective, and save lives.</p>
-        <h3>Key Facts</h3>
-        <ul>
-          <li>Vaccines protect you and those around you.</li>
-          <li>They are thoroughly tested for safety.</li>
-          <li>Side effects are usually mild and temporary.</li>
-          <li>Staying up to date with vaccines is important for all ages.</li>
-        </ul>
-        <h3>Common Questions</h3>
-        <p>If you have questions about vaccines, talk to your healthcare provider for personalized advice.</p>
-      </div>
-    ),
-  },
-  {
-    key: "mental-wellness",
-    icon: "psychology",
-    title: "Mental Wellness",
-    summary: "Tips for managing stress, improving sleep, and supporting your mental health.",
-    readTime: "2 min read",
-    content: (
-      <div className="prose max-w-2xl text-gray-800">
-        <h2>Why Mental Wellness Matters</h2>
-        <p>Mental health is just as important as physical health. Taking care of your mind helps you live a happier, more balanced life.</p>
-        <h3>Tips for Mental Wellness</h3>
-        <ul>
-          <li>Practice mindfulness or meditation daily.</li>
-          <li>Get enough sleep and maintain a regular routine.</li>
-          <li>Stay connected with friends and family.</li>
-          <li>Exercise regularly to boost your mood.</li>
-          <li>Don't hesitate to seek help from a professional if needed.</li>
-        </ul>
-        <h3>When to Seek Help</h3>
-        <p>If you feel persistently sad, anxious, or overwhelmed, reach out to a mental health professional for support.</p>
-      </div>
-    ),
-  },
-]
+import Link from "next/link"
+import { generateMedicalArticles, Article } from "@/lib/ai-content"
 
 export default function BlogPage() {
   const { getHeadingClass, getBodyClass } = useTheme()
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <div className="container max-w-screen-lg md:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
-        <div className="text-center sm:text-left space-y-3 md:space-y-6 mb-8 md:mb-12">
-          <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-full text-xs font-bold mb-2 tracking-widest uppercase">Blog</span>
-          <h1 className={`text-2xl md:text-4xl font-bold text-black text-left leading-relaxed ${getHeadingClass()}`}>Health Articles & Tips</h1>
-          <p className={`text-sm md:text-base text-gray-600 max-w-md md:max-w-2xl mx-auto sm:mx-0 text-left leading-relaxed ${getBodyClass()}`}>Browse our latest articles on health, wellness, and medical topics.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {articles.map((article) => (
-            <Link
-              key={article.key}
-              href={`/blog/${article.key}`}
-              className="bg-gray-50 rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col text-left mb-3 focus:outline-none focus:ring-2 focus:ring-primary transition hover:shadow-md"
-              aria-label={`Read article: ${article.title}`}
-            >
-              <span className="material-symbols-outlined text-primary text-3xl mb-3 self-center sm:self-start">{article.icon}</span>
-              <h2 className={`font-semibold text-base md:text-lg mb-2 text-left leading-relaxed ${getHeadingClass()}`}>{article.title}</h2>
-              <p className={`text-xs md:text-sm text-gray-600 mb-3 line-clamp-2 text-left leading-relaxed ${getBodyClass()}`}>{article.summary}</p>
-              <span className="text-primary text-xs font-medium mt-auto underline">Read More</span>
-            </Link>
-          ))}
-        </div>
-        <div className="max-w-2xl mx-auto mt-12 mb-16 px-4 md:px-6">
-          <h2 className="font-bold text-lg md:text-2xl mb-4 flex items-center gap-2"><span className="material-symbols-outlined text-primary">help</span> Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <details className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <summary className="font-semibold text-sm md:text-base cursor-pointer">How do I book an appointment?</summary>
-              <p className="mt-2 text-xs md:text-sm text-gray-700">You can call the practice directly or use the WhatsApp button on the site to start a conversation and book your appointment.</p>
-            </details>
-            <details className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <summary className="font-semibold text-sm md:text-base cursor-pointer">What medical aids do you accept?</summary>
-              <p className="mt-2 text-xs md:text-sm text-gray-700">We accept most major South African medical aids. Please contact us to confirm if yours is accepted.</p>
-            </details>
-            <details className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <summary className="font-semibold text-sm md:text-base cursor-pointer">Can I get a repeat prescription?</summary>
-              <p className="mt-2 text-xs md:text-sm text-gray-700">Yes, repeat prescriptions are available for ongoing treatments. Please contact the practice for details.</p>
-            </details>
-            <details className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <summary className="font-semibold text-sm md:text-base cursor-pointer">Do you offer emergency care?</summary>
-              <p className="mt-2 text-xs md:text-sm text-gray-700">Yes, emergency care is available. For urgent cases, please call the emergency number listed on the contact page.</p>
-            </details>
+  const [articles, setArticles] = useState<Article[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function loadArticles() {
+      try {
+        const articleData = await generateMedicalArticles()
+        setArticles(articleData)
+      } catch (err) {
+        console.error("Error loading articles:", err)
+        setError("Failed to load articles")
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadArticles()
+  }, [])
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  }
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <div className="container max-w-screen-lg mx-auto px-4 py-20">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className={`mt-4 text-gray-600 ${getBodyClass()}`}>Loading articles...</p>
           </div>
         </div>
       </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <div className="container max-w-screen-lg mx-auto px-4 py-20">
+          <div className="text-center">
+            <p className={`text-red-600 ${getBodyClass()}`}>{error}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-10 md:py-20 bg-gray-50">
+        <div className="container max-w-screen-lg mx-auto px-4">
+          <motion.div
+            className="text-center mb-8 md:mb-12"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <span className={`inline-block px-3 py-1 md:px-4 md:py-2 bg-primary text-primary-foreground rounded-full text-xs font-bold mb-3 md:mb-4 tracking-widest uppercase ${getBodyClass()}`}>
+              Blog
+            </span>
+            <h1 className={`text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 tracking-tight leading-tight ${getHeadingClass()}`}>
+              Health Articles & Tips
+            </h1>
+            <p className={`text-sm md:text-lg text-gray-600 max-w-xs md:max-w-2xl mx-auto leading-relaxed ${getBodyClass()}`}>
+              Stay informed with the latest health information and wellness tips relevant to South Africa
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Articles Section */}
+      <section className="py-10 md:py-20">
+        <div className="container max-w-screen-lg mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            {articles.map((article, index) => (
+              <motion.article
+                key={index}
+                className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all"
+                variants={fadeIn}
+                whileHover={{ y: -5 }}
+              >
+                <div className="mb-4 md:mb-6">
+                  <span className={`inline-block px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium ${getBodyClass()}`}>
+                    {article.category}
+                  </span>
+                  <span className={`text-xs text-gray-500 ml-2 ${getBodyClass()}`}>
+                    {article.date}
+                  </span>
+                </div>
+                
+                <h2 className={`text-lg md:text-xl font-bold text-black mb-3 md:mb-4 leading-tight ${getHeadingClass()}`}>
+                  {article.title}
+                </h2>
+                
+                <p className={`text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed line-clamp-4 ${getBodyClass()}`}>
+                  {article.summary}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <span className={`text-xs text-gray-500 ${getBodyClass()}`}>
+                    {article.content.split(' ').length} words
+                  </span>
+                  <Link 
+                    href={`/blog/article/${index}`}
+                    className={`text-primary text-sm font-medium hover:underline ${getBodyClass()}`}
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
+
+          {/* Additional Blog Categories */}
+          <motion.div
+            className="mt-12 md:mt-16"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <h2 className={`text-xl md:text-2xl font-bold text-black mb-6 md:mb-8 text-left ${getHeadingClass()}`}>
+              Health Topics
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { title: "Heart Health", icon: "favorite", href: "/blog/heart-health" },
+                { title: "Mental Wellness", icon: "psychology", href: "/blog/mental-wellness" },
+                { title: "Vaccinations", icon: "vaccines", href: "/blog/vaccination-facts" },
+                { title: "Child Health", icon: "child_care", href: "/blog/child-health" }
+              ].map((topic, index) => (
+                <Link
+                  key={index}
+                  href={topic.href}
+                  className="bg-gray-50 rounded-xl p-4 md:p-6 text-center hover:bg-gray-100 transition-colors"
+                >
+                  <span className="material-symbols-outlined text-primary text-2xl md:text-3xl mb-2 md:mb-3 block">
+                    {topic.icon}
+                  </span>
+                  <h3 className={`text-sm md:text-base font-medium text-black ${getBodyClass()}`}>
+                    {topic.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Newsletter Signup */}
+          <motion.div
+            className="mt-12 md:mt-16 bg-gray-50 rounded-xl md:rounded-2xl p-6 md:p-8 text-center"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <h3 className={`text-lg md:text-xl font-bold text-black mb-3 md:mb-4 ${getHeadingClass()}`}>
+              Stay Updated
+            </h3>
+            <p className={`text-sm md:text-base text-gray-600 mb-4 md:mb-6 ${getBodyClass()}`}>
+              Get the latest health tips and medical news delivered to your inbox
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button className="px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/80 transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 } 
