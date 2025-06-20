@@ -1,0 +1,10 @@
+/* TEAM */
+    Developer: AI Assistant
+    Contact: info@drsalumu.co.za
+    From: South Africa
+
+/* SITE */
+    Last update: 2024/01/15
+    Standards: HTML5, CSS3, JavaScript
+    Components: Next.js, React, Tailwind CSS
+    Software: Visual Studio Code, Git 
